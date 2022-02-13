@@ -14,9 +14,25 @@ function productNumber(product,price,incraese ){
     let ammountText=ammount.innerText;
     
     ammount.innerText=price*productInputValue;
-    
+    getTotal()
      return  productInput.value;
 }
+function productTotal(product){
+   const productInputtotal=document.getElementById("total_"+product );
+    let productInputtotalValue= parseInt(productInputtotal.innerText);
+    return productInputtotalValue;
+}
+function getTotal(){
+    const phoneTotal=productTotal("phone")*1219;
+    const phoneSilicone=productTotal("Silicone")*59;
+    const subtotal=phoneTotal+phoneSilicone;
+   
+    document.getElementById("subtotal").innerText=subtotal;
+
+   
+
+}
+
 // =======for phone
 document.getElementById('phone_plus_button').addEventListener('click',function(){
     
@@ -29,31 +45,9 @@ document.getElementById('phone_minus_button').addEventListener('click',function(
 // ====================================for case
 document.getElementById('plus_button_silicon').addEventListener("click", function(){  
     productNumber("Silicone",59,true)   
-    console.log("hello"); 
+   
 })
 document.getElementById("minus_button_silicon").addEventListener("click", function(){
     productNumber("Silicone",59,false)
-    console.log("hello"); 
-})
-// =======================================================
-// function buttonForPhone(iphone){
-//     const phone=document.getElementById('phone_number');
-//     let phoneValue=phone.value;
-//     if(iphone==true){
-//         phoneValue=parseInt(phoneValue)+1;
-        
-
-//     }
-//     else if(phoneValue>0){
-//         phoneValue=parseInt(phoneValue)-1;
-        
-
-//     }
-//     phone.value=phoneValue;
-//     const phoneammount=document.getElementById('total_phone');
-//     let ammountText=phoneammount.innerText;
     
-//     phoneammount.innerText=1219*phoneValue;
-//     return  phone.value;
-// }
-
+})
