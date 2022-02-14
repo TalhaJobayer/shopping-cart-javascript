@@ -23,9 +23,11 @@ function productTotal(product){
     return productInputtotalValue;
 }
 function getTotal(){
-    const phoneTotal=productTotal("phone")*1219;
-    const phoneSilicone=productTotal("Silicone")*59;
+    const phoneTotal=productTotal("phone");
+    const phoneSilicone=productTotal("Silicone");
     const subtotal=phoneTotal+phoneSilicone;
+    console.log(phoneTotal);
+    console.log(phoneSilicone);
    
     document.getElementById("subtotal").innerText=subtotal;
 
